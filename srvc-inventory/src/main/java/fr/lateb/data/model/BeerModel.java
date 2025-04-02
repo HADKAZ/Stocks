@@ -1,4 +1,4 @@
-package fr.lateb.data.domain;
+package fr.lateb.data.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -17,7 +17,7 @@ public class BeerModel {
     public String reference;
 
     @NonNull
-    public Float alcoolPercentage;
+    public Float alcoholPercentage;
 
     @ManyToOne
     @NonNull
@@ -26,4 +26,8 @@ public class BeerModel {
     @ManyToOne
     @NonNull
     public BeerTypeModel type;
+
+    @NonNull
+    @ManyToOne
+    public BeerFormatModel format;
 }

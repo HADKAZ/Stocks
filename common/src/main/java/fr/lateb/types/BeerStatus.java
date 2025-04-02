@@ -7,5 +7,8 @@ public enum BeerStatus {
     STORED,
     OUT,
     SOLD,
-    LOST;
+    LOST,
+    UNKNOWN;
+
+
 }

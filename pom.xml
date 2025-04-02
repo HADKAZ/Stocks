@@ -15,6 +15,7 @@
         <module>srvc-stats</module>
         <module>srvc-sales</module>
         <module>srvc-auth</module>
+        <module>srvc-discord</module>
         <module>front-carte</module>
         <module>front-management</module>
     </modules>

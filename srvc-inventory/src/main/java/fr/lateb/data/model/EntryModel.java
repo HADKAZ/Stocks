@@ -1,4 +1,4 @@
-package fr.lateb.data.domain;
+package fr.lateb.data.model;
 
 import fr.lateb.types.BeerStatus;
 import jakarta.annotation.Nullable;
@@ -20,7 +20,7 @@ public class EntryModel {
     public UUID id;
 
     @NonNull
-    public Boolean sellable;
+    public Boolean forSale;
 
     @NonNull
     public Float buyPrice;
@@ -31,13 +31,12 @@ public class EntryModel {
     @Nullable
     public Date saleDate;
 
-    @NonNull
-    @ManyToOne
-    public BeerFormatModel format;
-
     @ManyToOne
     @NonNull
     public OrderModel order;
+
+    @ManyToOne
+    public BeerModel beer;
 
     @Enumerated
     @NonNull

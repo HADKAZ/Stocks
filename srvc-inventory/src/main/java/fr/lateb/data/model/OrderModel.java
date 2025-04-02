@@ -1,4 +1,4 @@
-package fr.lateb.data.domain;
+package fr.lateb.data.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

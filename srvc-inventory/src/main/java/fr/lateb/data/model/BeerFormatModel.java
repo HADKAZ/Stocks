@@ -1,4 +1,4 @@
-package fr.lateb.data.domain;
+package fr.lateb.data.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -11,12 +11,8 @@ import lombok.Setter;
 @Setter
 public class BeerFormatModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer id;
-
-    @NonNull
-    public Float size; // In Cl
-
-    @NonNull
     public String name;
+
+    @NonNull
+    public Float size;
 }
