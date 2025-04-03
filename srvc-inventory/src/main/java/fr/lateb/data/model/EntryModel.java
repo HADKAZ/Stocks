@@ -1,6 +1,6 @@
 package fr.lateb.data.model;
 
-import fr.lateb.types.BeerStatus;
+import fr.lateb.type.BeerStatus;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;
