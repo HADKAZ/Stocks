@@ -1,6 +1,6 @@
 package fr.lateb.domain.entity;
 
-import fr.lateb.types.BeerStatus;
+import fr.lateb.type.BeerStatus;
 
 import java.util.Date;
 import java.util.UUID;

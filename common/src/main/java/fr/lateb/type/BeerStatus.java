@@ -1,4 +1,4 @@
-package fr.lateb.types;
+package fr.lateb.type;
 
 import lombok.AllArgsConstructor;
 
