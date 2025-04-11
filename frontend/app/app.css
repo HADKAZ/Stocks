@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'BobbyRough';
+  src: url('/fonts/bobby-rough-soft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  font-family: 'BobbyRough', sans-serif;
+  background-color: #FBEBCF;
+}
