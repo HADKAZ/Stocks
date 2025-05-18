@@ -13,7 +13,7 @@ public class BrewerySubscriber {
     }
 
     @Incoming("UnregisterBreweryCommand")
-    public void unregisterBreweryCommand(String name)
+    public void unregisterBreweryCommand(String breweryName)
     {
 
     }

@@ -1,5 +1,6 @@
 package fr.lateb.data.model;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NonNull;
@@ -20,7 +21,7 @@ public class BeerModel {
     public Float alcoholPercentage;
 
     @ManyToOne
-    @NonNull
+    @Nullable
     public BreweryModel brewery;
 
     @ManyToOne
