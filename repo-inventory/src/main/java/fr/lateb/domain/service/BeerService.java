@@ -1,12 +1,17 @@
 package fr.lateb.domain.service;
 
+import fr.lateb.converter.BeerConverter;
 import fr.lateb.data.model.BeerFormatModel;
 import fr.lateb.data.model.BeerModel;
 import fr.lateb.data.model.BeerTypeModel;
 import fr.lateb.data.repository.BeerRepository;
+import fr.lateb.domain.entity.BeerEntity;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+
+import java.util.Comparator;
+import java.util.List;
 
 @ApplicationScoped
 public class BeerService {
@@ -31,7 +36,13 @@ public class BeerService {
     }
 
     @Transactional
-    public void unregisterBeer(Long barcode) {
-        boolean success = beerRepository.deleteById(barcode);
+    public boolean unregisterBeer(Long barcode) {
+        return beerRepository.deleteById(barcode);
     }
+
+    public List<BeerEntity> getAllBeers() {
+        //On sort en fonction du hash du type histoire de grouper les bières du même type ensemble
+        return beerRepository.findAll().stream().map(BeerConverter::toEntity).sorted(Comparator.comparing(a -> a.type().hashCode())).toList();
+    }
+
 }

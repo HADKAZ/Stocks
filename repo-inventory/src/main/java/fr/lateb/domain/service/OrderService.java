@@ -1,12 +1,16 @@
 package fr.lateb.domain.service;
 
 import com.google.inject.Inject;
+import fr.lateb.converter.OrderConverter;
 import fr.lateb.data.model.OrderModel;
 import fr.lateb.data.repository.OrderRepository;
+import fr.lateb.domain.entity.OrderEntity;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 
 @ApplicationScoped
 public class OrderService {
@@ -26,5 +30,10 @@ public class OrderService {
         order.setArrivalDate(arrivalDate);
 
         orderRepository.persist(order);
+    }
+
+    public List<OrderEntity> getAllOrders() {
+        return orderRepository.findAll().stream().map(OrderConverter::toEntity).
+                sorted(Comparator.comparing(a -> a.arrivalDate())).toList();
     }
 }

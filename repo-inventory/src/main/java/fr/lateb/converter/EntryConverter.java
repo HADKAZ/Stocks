@@ -6,7 +6,7 @@ import fr.lateb.data.model.OrderModel;
 import fr.lateb.domain.entity.EntryEntity;
 
 public class EntryConverter {
-    public EntryEntity toEntity(EntryModel model) {
+    public static EntryEntity toEntity(EntryModel model) {
         if (model == null)
             return null;
 
@@ -14,7 +14,7 @@ public class EntryConverter {
                 model.getSaleDate(), model.getOrder().getId(), model.getBeer().getId(), model.getStatus());
     }
 
-    public EntryModel toModel(EntryEntity entity, BeerModel beer, OrderModel order)
+    public static EntryModel toModel(EntryEntity entity, BeerModel beer, OrderModel order)
     {
         if (entity == null)
             return null;

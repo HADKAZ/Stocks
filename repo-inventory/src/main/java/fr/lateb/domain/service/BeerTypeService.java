@@ -24,4 +24,6 @@ public class BeerTypeService {
         beerType.setDescription(description);
         beerTypeRepository.persist(beerType);
     }
+
+
 }

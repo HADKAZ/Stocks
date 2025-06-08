@@ -4,7 +4,7 @@ import fr.lateb.data.model.BreweryModel;
 import fr.lateb.domain.entity.BreweryEntity;
 
 public class BreweryConverter {
-    public BreweryEntity toEntity(BreweryModel model)
+    public static BreweryEntity toEntity(BreweryModel model)
     {
         if (model == null)
             return null;
@@ -12,7 +12,7 @@ public class BreweryConverter {
         return new BreweryEntity(model.getName(), model.getCountry(), model.getDescription());
     }
 
-    public BreweryModel toModel(BreweryEntity entity)
+    public static BreweryModel toModel(BreweryEntity entity)
     {
         if (entity == null)
             return null;

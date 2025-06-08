@@ -4,7 +4,7 @@ import fr.lateb.data.model.OrderModel;
 import fr.lateb.domain.entity.OrderEntity;
 
 public class OrderConverter {
-    public OrderEntity toEntity(OrderModel model)
+    public static OrderEntity toEntity(OrderModel model)
     {
         if (model == null)
             return null;
@@ -12,7 +12,7 @@ public class OrderConverter {
         return new OrderEntity(model.getId(), model.getSupplier(), model.getArrivalDate());
     }
 
-    public OrderModel toModel(OrderEntity entity)
+    public static OrderModel toModel(OrderEntity entity)
     {
         if (entity == null)
             return null;

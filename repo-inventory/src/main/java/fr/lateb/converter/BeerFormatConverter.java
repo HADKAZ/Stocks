@@ -4,7 +4,7 @@ import fr.lateb.data.model.BeerFormatModel;
 import fr.lateb.domain.entity.BeerFormatEntity;
 
 public class BeerFormatConverter {
-    public BeerFormatEntity toEntity(BeerFormatModel model)
+    public static BeerFormatEntity toEntity(BeerFormatModel model)
     {
         if (model == null)
             return null;
@@ -12,7 +12,7 @@ public class BeerFormatConverter {
         return new BeerFormatEntity(model.getName(), model.getSize());
     }
 
-    public BeerFormatModel toModel(BeerFormatEntity entity)
+    public static BeerFormatModel toModel(BeerFormatEntity entity)
     {
         if (entity == null)
             return null;

@@ -15,6 +15,9 @@ public class BeerModel {
     public Long id; // Bar code
 
     @NonNull
+    public String name;
+
+    @NonNull
     public String reference;
 
     @NonNull
