@@ -8,7 +8,7 @@ public  class BeerConverter {
     {
         if (model == null)
             return null;
-        return new BeerEntity(model.getId(),model.getName(), model.getReference(), model.getAlcoholPercentage(), model.getBrewery() != null ? model.getBrewery().getName() : "", model.getType().getType());
+        return new BeerEntity(model.getId(),model.getName(), model.getDescription(), model.getAlcoholPercentage(), model.getBrewery() != null ? model.getBrewery().getName() : "", model.getType().getType());
     }
 
     public static  BeerModel toModel(BeerEntity entity)
@@ -20,7 +20,7 @@ public  class BeerConverter {
 
         model.setId(entity.id());
         model.setAlcoholPercentage(entity.alcoholPercentage());
-        model.setReference(entity.reference());
+        model.setDescription(entity.description());
         model.setName(entity.name());
         return model;
     }

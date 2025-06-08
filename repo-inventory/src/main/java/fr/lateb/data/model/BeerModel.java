@@ -18,7 +18,7 @@ public class BeerModel {
     public String name;
 
     @NonNull
-    public String reference;
+    public String description;
 
     @NonNull
     public Float alcoholPercentage;

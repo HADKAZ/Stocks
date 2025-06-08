@@ -20,15 +20,16 @@ public class BeerService {
     BeerRepository beerRepository;
 
     @Transactional
-    public void registerBeer(Long barcode, String reference, Float alcoholPercentage , BeerTypeModel beerTypeModel , BeerFormatModel beerFormatModel) {
+    public void registerBeer(Long barcode,String name , String description, Float alcoholPercentage , BeerTypeModel beerTypeModel , BeerFormatModel beerFormatModel) {
 
         var temp =beerRepository.findById(barcode);
         if(temp != null){
-            throw  new IllegalArgumentException("Beer : "+ reference + " already exists | barcode : " + barcode);
+            throw  new IllegalArgumentException("Beer : "+ name + " already exists | barcode : " + barcode);
         }
         var newBeer = new BeerModel();
         newBeer.setId(barcode);
-        newBeer.setReference(reference);
+        newBeer.setDescription(description);
+        newBeer.setName(name);
         newBeer.setAlcoholPercentage(alcoholPercentage);
         newBeer.setType(beerTypeModel);
         newBeer.setFormat(beerFormatModel);
