@@ -46,4 +46,7 @@ public class BeerService {
         return beerRepository.findAll().stream().map(BeerConverter::toEntity).sorted(Comparator.comparing(a -> a.type().hashCode())).toList();
     }
 
+    public BeerEntity getBeerById(Long barcode) {
+        return BeerConverter.toEntity(beerRepository.findById(barcode));
+    }
 }

@@ -2,6 +2,7 @@ package fr.lateb.command;
 
 import lombok.NonNull;
 import lombok.Value;
+import org.eclipse.sisu.Nullable;
 
 @Value
 public class RegisterBreweryCommand {
@@ -11,5 +12,6 @@ public class RegisterBreweryCommand {
     @NonNull
     public String country;
 
+    @Nullable
     public String description;
 }

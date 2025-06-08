@@ -31,6 +31,7 @@ public class EntryService {
 
     @Transactional
     public void registerEntry(Long orderId, Long beerId, Float buyPrice, Date ddm, boolean forSale, BeerStatus status) {
+
         var entry = new EntryModel();
         entry.setBuyPrice(buyPrice);
         entry.setDDM(ddm);
