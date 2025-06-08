@@ -36,6 +36,7 @@ public class EntryModel {
     public OrderModel order;
 
     @ManyToOne
+    @NonNull
     public BeerModel beer;
 
     @Enumerated

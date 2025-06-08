@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 public class OrderModel {
     @Id
-    public Integer id;
+    public Long id;
 
     @NonNull
     public String supplier;

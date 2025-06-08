@@ -14,6 +14,11 @@ public class BreweryService {
     BreweryRepository breweryRepository;
 
     public void registerBrewery(String name, String description) {
-        breweryRepository.persist(new BreweryModel(name = name, description = description));
+        var nBrewery = new BreweryModel() ;
+        nBrewery.setName(name);
+        nBrewery.setDescription(description);
+        breweryRepository.persist(nBrewery);
     }
+
+
 }
