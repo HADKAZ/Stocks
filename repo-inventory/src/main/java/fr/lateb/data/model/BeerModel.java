@@ -18,6 +18,7 @@ public class BeerModel {
     public String name;
 
     @NonNull
+    @Column(length = 1000)
     public String description;
 
     @NonNull

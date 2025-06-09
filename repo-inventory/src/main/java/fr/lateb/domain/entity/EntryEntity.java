@@ -6,4 +6,5 @@ import java.util.Date;
 import java.util.UUID;
 
 public record EntryEntity(UUID id, Boolean forSale, Float buyPrice, Date DDM, Date saleDate, Long order,
-                          Long beer, BeerStatus status) {}
+                          Long beer, BeerStatus status) {
+}

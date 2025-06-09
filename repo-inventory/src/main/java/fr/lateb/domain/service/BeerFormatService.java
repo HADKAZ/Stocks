@@ -1,9 +1,9 @@
 package fr.lateb.domain.service;
 
-import com.google.inject.Inject;
 import fr.lateb.data.model.BeerFormatModel;
 import fr.lateb.data.repository.BeerFormatRepository;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 @ApplicationScoped

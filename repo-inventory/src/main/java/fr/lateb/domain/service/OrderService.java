@@ -1,11 +1,11 @@
 package fr.lateb.domain.service;
 
-import com.google.inject.Inject;
 import fr.lateb.converter.OrderConverter;
 import fr.lateb.data.model.OrderModel;
 import fr.lateb.data.repository.OrderRepository;
 import fr.lateb.domain.entity.OrderEntity;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 import java.util.Comparator;

@@ -14,8 +14,7 @@ public class EntryConverter {
                 model.getSaleDate(), model.getOrder().getId(), model.getBeer().getId(), model.getStatus());
     }
 
-    public static EntryModel toModel(EntryEntity entity, BeerModel beer, OrderModel order)
-    {
+    public static EntryModel toModel(EntryEntity entity, BeerModel beer, OrderModel order) {
         if (entity == null)
             return null;
 

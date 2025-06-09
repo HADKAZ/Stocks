@@ -1,12 +1,12 @@
 package fr.lateb.presentation.subscriber;
 
-import fr.lateb.command.RegisterBreweryCommand;
+//import fr.lateb.command.RegisterBreweryCommand;
+
 import jakarta.enterprise.context.ApplicationScoped;
-import org.eclipse.microprofile.reactive.messaging.Incoming;
 
 @ApplicationScoped
 public class BrewerySubscriber {
-    @Incoming("RegisterBreweryCommand")
+   /* @Incoming("RegisterBreweryCommand")
     public void registerBreweryCommand(RegisterBreweryCommand command)
     {
 
@@ -16,5 +16,5 @@ public class BrewerySubscriber {
     public void unregisterBreweryCommand(String breweryName)
     {
 
-    }
+    }*/
 }

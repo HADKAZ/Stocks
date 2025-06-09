@@ -1,16 +1,14 @@
 package fr.lateb.domain.service;
 
-import com.google.inject.Inject;
 import fr.lateb.converter.EntryConverter;
 import fr.lateb.data.model.EntryModel;
-import fr.lateb.data.model.OrderModel;
-import fr.lateb.data.model.BeerModel;
+import fr.lateb.data.repository.BeerRepository;
 import fr.lateb.data.repository.EntryRepository;
 import fr.lateb.data.repository.OrderRepository;
-import fr.lateb.data.repository.BeerRepository;
 import fr.lateb.domain.entity.EntryEntity;
 import fr.lateb.type.BeerStatus;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 import java.util.Date;
@@ -51,7 +49,7 @@ public class EntryService {
         entryRepository.persist(entry);
     }
 
-    public List<EntryEntity> getAllEntries (){
+    public List<EntryEntity> getAllEntries() {
         return entryRepository.findAll().stream().map(EntryConverter::toEntity).toList();
     }
 }
