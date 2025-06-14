@@ -2,12 +2,14 @@ package fr.lateb.converter;
 
 import fr.lateb.data.model.BeerModel;
 import fr.lateb.domain.entity.BeerEntity;
+import fr.lateb.domain.entity.BeerFormatEntity;
+import fr.lateb.domain.entity.BreweryEntity;
 
 public class BeerConverter {
     public static BeerEntity toEntity(BeerModel model) {
         if (model == null)
             return null;
-        return new BeerEntity(model.getId(), model.getName(), model.getDescription(), model.getAlcoholPercentage(), model.getBrewery() != null ? model.getBrewery().getName() : "", BeerTypeConverter.toEntity(model.getType()));
+        return new BeerEntity(model.getId(), model.getName(), model.getDescription(), model.getAlcoholPercentage(), BeerFormatConverter.toEntity(model.getFormat()), BreweryConverter.toEntity(model.getBrewery()), BeerTypeConverter.toEntity(model.getType()));
     }
 
     public static BeerModel toModel(BeerEntity entity) {

@@ -7,6 +7,7 @@ import fr.lateb.data.model.BeerTypeModel;
 import fr.lateb.data.repository.BeerRepository;
 import fr.lateb.data.repository.BeerTypeRepository;
 import fr.lateb.domain.entity.BeerEntity;
+import fr.lateb.errors.ErrorsCode;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -42,18 +43,20 @@ public class BeerService {
     public void registerBeer(BeerEntity beer) {
 
 
-        var temp = beerRepository.findById(beer.id());
-        if (temp != null) {
-            throw new IllegalArgumentException("Beer : " + beer.name() + " already exists | barcode : " + beer.id());
-        }
+        var beerModel = beerRepository.findById(beer.id());
+        if (beerModel != null)
+            ErrorsCode.BEER_ALREADY_EXISTS.throwException(beerModel.name);
         var newBeer = BeerConverter.toModel(beer);
         beerTypeRepository.persist(newBeer.getType());
         beerRepository.persist(newBeer);
     }
 
     @Transactional
-    public boolean unregisterBeer(Long barcode) {
-        return beerRepository.deleteById(barcode);
+    public void unregisterBeer(Long barcode) {
+        var beerModel = beerRepository.findById(barcode);
+        if(beerModel != null)
+            ErrorsCode.BEER_NOT_FOUND.throwException(beerModel.name);
+        beerRepository.deleteById(barcode);
     }
 
     @Transactional
