@@ -23,6 +23,8 @@ public class BeerConverter {
         model.setDescription(entity.description());
         model.setName(entity.name());
         model.setType(BeerTypeConverter.toModel(entity.type()));
+        model.setBrewery(BreweryConverter.toModel(entity.brewery()));
+        model.setFormat(BeerFormatConverter.toModel(entity.format()));
         return model;
     }
 }

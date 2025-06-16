@@ -4,7 +4,6 @@ package fr.lateb.errors;
 import fr.lateb.util.HttpError;
 import fr.lateb.util.IHttpError;
 import jakarta.ws.rs.core.Response.Status;
-import lombok.Getter;
 
 import static jakarta.ws.rs.core.Response.Status.BAD_REQUEST;
 import static jakarta.ws.rs.core.Response.Status.NOT_FOUND;

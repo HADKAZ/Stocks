@@ -28,7 +28,7 @@ public class MenuResource {
     }
 
     @GET
-    @Path("/barcode") // Example : /inventory/barcode?id=456879
+    @Path("/beer") // Example : /inventory/barcode?id=456879
     public Response getBeeryByBarcode(@QueryParam("id") String barcode) throws BeerNotFoundError {
         var beers = beerService.getBeerById(Long.parseLong(barcode));
         return Response.ok(beers).build();
@@ -40,8 +40,8 @@ public class MenuResource {
     @Path("/beers")
     public Response addBeer(BeerEntity beer) {
 
-        beerService.registerBeer(beer);
-        return Response.status(Response.Status.CREATED).build();
+        var getBeerResponse = beerService.registerBeer(beer);
+        return Response.status(Response.Status.CREATED).entity(getBeerResponse).build();
     }
 
 
