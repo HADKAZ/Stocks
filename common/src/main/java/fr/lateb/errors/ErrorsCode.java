@@ -14,6 +14,7 @@ public enum ErrorsCode implements IHttpError {
     EXAMPLE_ERROR(BAD_REQUEST, "Example error: %s"),
    BEER_NOT_FOUND(NOT_FOUND, "Beer not found : %s"),
     BEER_ALREADY_EXISTS(BAD_REQUEST, "Beer already exists : %s"),
+    INVALID_FIELD(BAD_REQUEST, "Invalid Field : %s"),
     ;
     private final HttpError error;
 

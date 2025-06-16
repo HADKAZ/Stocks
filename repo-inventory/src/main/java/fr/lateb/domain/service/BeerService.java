@@ -1,5 +1,6 @@
 package fr.lateb.domain.service;
 
+import fr.lateb.api.request.GetBeerByRequest;
 import fr.lateb.api.response.GetBeerResponse;
 import fr.lateb.converter.BeerConverter;
 import fr.lateb.converter.BeerFormatConverter;
@@ -31,6 +32,8 @@ public class BeerService {
     BreweryRepository breweryRepository;
     @Inject
     BeerFormatRepository beerFormatRepository;
+
+
     @Transactional
     public void registerBeer(Long barcode, String name, String description, Float alcoholPercentage, BeerTypeModel beerTypeModel, BeerFormatModel beerFormatModel) {
 
@@ -97,7 +100,18 @@ public class BeerService {
         return beerRepository.findAll().stream().map(GetBeerResponse::fromModel).toList();
     }
 
+    @Transactional
+    public List<GetBeerResponse> getBeersBy(String field , String value) {
+        try{
+           return beerRepository.find(field , value).stream().map(GetBeerResponse::fromModel).toList();
+        }catch(Exception e){
+            ErrorsCode.INVALID_FIELD.throwException(field);
+        }
+        return null;
+    }
+
     public BeerEntity getBeerById(Long barcode) {
         return BeerConverter.toEntity(beerRepository.findById(barcode));
     }
+
 }
