@@ -1,5 +1,6 @@
 package fr.lateb.presentation.rest;
 
+import fr.lateb.api.request.AddBeerRequest;
 import fr.lateb.api.request.GetBeerByRequest;
 import fr.lateb.api.request.UnregisterBeerRequest;
 import fr.lateb.domain.entity.BeerEntity;
@@ -41,7 +42,7 @@ public class MenuResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/beer")
-    public Response addBeer(BeerEntity beer) {
+    public Response addBeer(AddBeerRequest beer) {
 
         var getBeerResponse = beerService.registerBeer(beer);
         return Response.status(Response.Status.CREATED).entity(getBeerResponse).build();
