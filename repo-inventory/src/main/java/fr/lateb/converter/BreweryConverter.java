@@ -17,7 +17,7 @@ public class BreweryConverter {
 
         var model = new BreweryModel();
 
-        model.setCountry(entity.country());
+        model.setCountry(entity.county());
         model.setDescription(entity.description());
         model.setName(entity.name());
 

@@ -1,8 +1,5 @@
 package fr.lateb.presentation.rest;
 
-import fr.lateb.api.request.AddBeerRequest;
-import fr.lateb.api.request.GetBeerByRequest;
-import fr.lateb.api.request.UnregisterBeerRequest;
 import fr.lateb.domain.entity.BeerEntity;
 import fr.lateb.domain.service.BeerService;
 import fr.lateb.errors.ErrorsCode;
@@ -40,28 +37,11 @@ public class MenuResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/beer")
-    public Response addBeer(AddBeerRequest beer) {
+    @Path("/beers")
+    public Response addBeer(BeerEntity beer) {
 
         var getBeerResponse = beerService.registerBeer(beer);
         return Response.status(Response.Status.CREATED).entity(getBeerResponse).build();
-    }
-
-    @GET
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/beer/{field}")
-    public Response getBeerBy(@PathParam("field") String field , @QueryParam("field") String value)  {
-        var beers = beerService.getBeersBy(field,value);
-        return Response.ok().entity(beers).build();
-    }
-    @DELETE
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/beer")
-    public Response deleteBeer(UnregisterBeerRequest unregisterBeerRequest) {
-        beerService.unregisterBeer(unregisterBeerRequest.id());
-        return Response.ok().build();
     }
 
 

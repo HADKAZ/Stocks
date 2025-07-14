@@ -67,6 +67,7 @@ public class BeerService {
         var newBeer =  new BeerModel();
         newBeer.setName( beer.name());
         newBeer.setId(Long.valueOf(beer.barcode()));
+        newBeer.format
 
 
 
