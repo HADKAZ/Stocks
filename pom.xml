@@ -11,7 +11,7 @@
 
     <modules>
         <module>common</module>
-        <module>srvc-inventory</module>
+        <module>repo-inventory</module>
         <module>srvc-stats</module>
         <module>srvc-sales</module>
         <module>srvc-auth</module>
